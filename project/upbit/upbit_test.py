@@ -1,6 +1,6 @@
 import pyupbit
 import time
-
+# ready
 # Get all KRW trading pairs
 tickers = pyupbit.get_tickers(fiat="KRW")
 
