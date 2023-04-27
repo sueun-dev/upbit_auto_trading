@@ -34,18 +34,18 @@ left_frame.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.BOTH)
 text_box = scrolledtext.ScrolledText(left_frame, wrap=tk.WORD, width=70, height=20)
 text_box.pack(padx=10, pady=10, expand=True, fill=tk.BOTH)
 
-get_text_button = tk.Button(left_frame, text="Add trace coin", command=add_coin, font=("Helvetica", 10))
-get_text_button.pack(padx=0, pady=0, side=tk.LEFT)
+get_add_coin_button = tk.Button(left_frame, text="Add trace coin", command=add_coin, font=("Helvetica", 10), state=tk.DISABLED)
+get_add_coin_button.pack(padx=0, pady=0, side=tk.LEFT)
 
-get_text_button = tk.Button(left_frame, text="Remove trace coin", command=delete_coin, font=("Helvetica", 10))
-get_text_button.pack(padx=5, pady=0, side=tk.LEFT)
+get_remove_coin_button = tk.Button(left_frame, text="Remove trace coin", command=delete_coin, font=("Helvetica", 10), )
+get_remove_coin_button.pack(padx=5, pady=0, side=tk.LEFT)
 
-get_text_button = tk.Button(left_frame, text="coin list", command=coin_list.open_new_window, font=("Helvetica", 10))
-get_text_button.pack(padx=5, pady=0, side=tk.LEFT)
+get_coin_list_button = tk.Button(left_frame, text="coin list", command=coin_list.open_new_window, font=("Helvetica", 10))
+get_coin_list_button.pack(padx=5, pady=0, side=tk.LEFT)
 
 # Add coin
 entry_label = tk.Label(left_frame, text="add coin. write like -> btc, eth, sol, matic etc...")
-entry_label.pack(padx=30, pady=0, side=tk.TOP, anchor=tk.W)
+entry_label.pack(padx=0, pady=0, side=tk.TOP, anchor=tk.W)
 entry = tk.Entry(left_frame, width=30)
 entry.pack(padx=10, pady=10, side=tk.LEFT)
 

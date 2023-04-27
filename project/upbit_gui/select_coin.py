@@ -14,6 +14,7 @@ def add_coin():
     if not found:
         tickers.append(entry_text)
         check_trace_coin()
+        
 
 
 def delete_coin():
