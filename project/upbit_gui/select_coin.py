@@ -1,5 +1,6 @@
 import screen
-from upbit import tickers, check_trace_coin
+from upbit import tickers, new_trace_coin, coin_list_tickers
+
 
 def add_coin():
     entry_text = "KRW-" + screen.entry.get().upper()
@@ -10,11 +11,18 @@ def add_coin():
             found = True
             print("You already have this coin")
             break
-
+        elif entry_text == "KRW-":
+            found = True
+            print("NULL")
+            break
     if not found:
-        tickers.append(entry_text)
-        check_trace_coin()
-        
+        if entry_text in coin_list_tickers:
+            print("Coin is available")
+            tickers.append(entry_text)
+            new_trace_coin()
+        else:
+            print("Coin is not available")
+            found = True
 
 
 def delete_coin():
@@ -23,7 +31,7 @@ def delete_coin():
         for i, coin in enumerate(tickers):
             if entry_text == coin:
                 tickers.pop(i)
-                check_trace_coin()
+                new_trace_coin()
                 break
     else :
         print("need more coin to compare it")

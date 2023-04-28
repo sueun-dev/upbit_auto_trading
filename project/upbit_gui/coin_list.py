@@ -9,9 +9,12 @@ def open_new_window():
     new_window = tk.Toplevel()
     new_window.title("New Window")
     new_window.geometry("400x300")
-
+    return new_window
+    
+def coin_list_window():
     # 코인 심볼을 출력할 리스트박스 생성
-    coin_listbox = tk.Listbox(new_window)
+    show_coin_list = open_new_window()
+    coin_listbox = tk.Listbox(show_coin_list)
     coin_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     # 코인 심볼을 리스트박스에 추가
@@ -20,6 +23,6 @@ def open_new_window():
         coin_listbox.insert(tk.END, ", ".join(chunk))
 
     # 리스트박스에 스크롤바 연결
-    scrollbar = tk.Scrollbar(new_window, orient=tk.VERTICAL, command=coin_listbox.yview)
+    scrollbar = tk.Scrollbar(show_coin_list, orient=tk.VERTICAL, command=coin_listbox.yview)
     scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
     coin_listbox.configure(yscrollcommand=scrollbar.set)
