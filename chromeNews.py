@@ -159,4 +159,4 @@ schedule_fetching()
 # 하루에 4번 작동하며, 각각 txt 파일을 나눠서 관리
 # - 이유 : 많은 양의 scrape은 ban 될 수 있음
 # 이후 마지막 23:59분에 Today Final txt 파일 생성해서 총 Neutral, negative, positive 퍼센트 관리
-# Neutral인 경우 gpt api 사용해서 전달 후 결과값 가져오기
+# Neutral인 경우 gpt api 사용해서 전달 후 결과값 가져오기!
